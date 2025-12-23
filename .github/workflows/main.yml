@@ -1,0 +1,20 @@
+name: Deploy Project
+
+on:
+  push:
+    branches:
+      - main  # Change this to the name of your specific branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Add your specific deployment steps here
+      # For example, if you are using npm:
+      - name: Install and Build
+        run: |
+          npm install
+          npm run build
